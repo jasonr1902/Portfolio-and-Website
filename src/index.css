@@ -24,7 +24,6 @@
 }
 
 @layer base {
-
   html {
     scroll-behavior: smooth;
   }
@@ -43,9 +42,8 @@
     height: 50px;
     width: 50px;
     padding-left: 4px;
-    padding-top: 4px
+    padding-top: 4px;
   }
-
 }
 
 @layer components {
@@ -62,17 +60,18 @@
   }
 
   .glow-text {
-    text-shadow: 0 0 30px color-mix(in srgb, var(--color-primary)30%, transparent)
+    text-shadow: 0 0 30px
+      color-mix(in srgb, var(--color-primary) 30%, transparent);
   }
 
   .glow-border {
-    box-shadow: 0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent),
+    box-shadow:
+      0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent),
       inset 0 0 20px color-mix(in srgb, var(--color-primary) 50%, transparent);
   }
 }
 
 @layer utilities {
-
   @keyframes fade-in {
     from {
       opacity: 0;
@@ -89,7 +88,7 @@
   @keyframes slow-drift {
     0%,
     100% {
-      transform: translate(0,0);
+      transform: translate(0, 0);
       filter: blur(4px);
       opacity: 30%;
     }
@@ -133,11 +132,9 @@
     animation: marquee 30s linear infinite;
   }
 
-
   .animate-float {
     animation: float 4s ease-in-out infinite;
   }
-
 
   .animate-fade-in-fast {
     animation: fade-in 0.2s ease-out both;
@@ -202,6 +199,9 @@
     background-color: color-mix(in srgb, #26c4b8 20%, transparent);
   }
 
-
-
+  .timeline-glow {
+    box-shadow:
+      0 0 40px color-mix(in srgb, var(--color-primary) 35%, transparent),
+      0 0 80px color-mix(in srgb, var(--color-primary) 25%, transparent);
+  }
 }
