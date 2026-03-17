@@ -81,9 +81,11 @@ export const Hero = () => {
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 animate-fade-in-slow animation-delay-600">
-              <Button size="lg">
-                Contact Me <ArrowRight className="" />
-              </Button>
+              <a href="#contact">
+                <Button size="lg">
+                  Contact Me <ArrowRight className="" />
+                </Button>
+              </a>
               <AnimatedBorderButton>
                 <Download className="w-5 h-5" />
                 Download CV
@@ -94,13 +96,18 @@ export const Hero = () => {
             <div className="flex items-center gap-4 animate-fade-in-slow animation-delay-800">
               <span className="text-sm text-muted-foreground">Follow Me: </span>
               {[
-                { icon: Github, href: "#" }, //Replace placeholders
-                { icon: Linkedin, href: "#" },
-                { icon: Twitter, href: "#" },
+                { icon: Github, href: "https://github.com/jasonr1902" }, //Replace placeholders
+                {
+                  icon: Linkedin,
+                  href: "https://www.linkedin.com/in/jason-r-b3b546184/",
+                },
+                { icon: Twitter, href: "https://x.com/JasonRoyer02" },
               ].map((social, idx) => (
                 <a
                   href={social.href}
                   key={idx}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
                 >
                   {<social.icon className="w-5 h-5" />}
