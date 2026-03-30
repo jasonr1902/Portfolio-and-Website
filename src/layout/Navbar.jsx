@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 const navLinks = [
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
-  { href: "#experience", label: "Experience" },
+  { href: "#milestones", label: "Milestones" },
 ];
 
 export const Navbar = () => {
@@ -28,8 +28,8 @@ export const Navbar = () => {
       className={`fixed top-0 left-0 right-0 transition-all ${isScrolled ? "glass-strong py-3" : "bg-transparent py-5"} z-50`}
     >
       <nav className="container mx-auto px-6 flex items-center justify-between">
-        <a href="0" className="main-logo">
-          <img src={Logo} alt="logo" />
+        <a href="0" className="main-logo w-5 h-8">
+          <div className="text-2xl">JR</div>
         </a>
 
         {/* Desktop Nav */}
@@ -49,7 +49,7 @@ export const Navbar = () => {
 
         {/* CTA Button */}
         <div className="hidden md:block">
-          <a href="#contact">
+          <a href="#contact" className="hover:cursor-pointer">
             <Button size="sm">Contact Me</Button>
           </a>
         </div>

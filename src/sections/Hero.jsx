@@ -39,7 +39,7 @@ export const Hero = () => {
           <div
             className="absolute w-5 h-5 rounded-full opacity-30 blur-xs"
             style={{
-              backgroundColor: "#30B2E6",
+              backgroundColor: "#537EEE",
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
               animation: `slow-drift ${15 + Math.random() * 20}s ease-in-out infinite`,
@@ -86,17 +86,22 @@ export const Hero = () => {
                   Contact Me <ArrowRight className="" />
                 </Button>
               </a>
-              <AnimatedBorderButton>
-                <Download className="w-5 h-5" />
-                Download CV
-              </AnimatedBorderButton>
+              <a
+                href="/src/assets/Jason_Royer_Resume_030126.pdf"
+                download="Resume"
+              >
+                <AnimatedBorderButton>
+                  <Download className="w-5 h-5" />
+                  Download CV
+                </AnimatedBorderButton>
+              </a>
             </div>
 
             {/* Social Links */}
             <div className="flex items-center gap-4 animate-fade-in-slow animation-delay-800">
               <span className="text-sm text-muted-foreground">Follow Me: </span>
               {[
-                { icon: Github, href: "https://github.com/jasonr1902" }, //Replace placeholders
+                { icon: Github, href: "https://github.com/jasonr1902" },
                 {
                   icon: Linkedin,
                   href: "https://www.linkedin.com/in/jason-r-b3b546184/",
