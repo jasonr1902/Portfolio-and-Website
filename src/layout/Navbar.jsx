@@ -28,7 +28,7 @@ export const Navbar = () => {
       className={`fixed top-0 left-0 right-0 transition-all ${isScrolled ? "glass-strong py-3" : "bg-transparent py-5"} z-50`}
     >
       <nav className="container mx-auto px-6 flex items-center justify-between">
-        <a href="0" className="main-logo w-5 h-8">
+        <a href="#" className="main-logo w-5 h-8">
           <div className="text-2xl">JR</div>
         </a>
 
@@ -78,9 +78,11 @@ export const Navbar = () => {
               </a>
             ))}
 
-            <Button size="default" onClick={() => setIsMobileMenuOpen(false)}>
-              Contact Me
-            </Button>
+            <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
+              <Button size="default" className="w-full">
+                Contact Me
+              </Button>
+            </a>
           </div>
         </div>
       )}

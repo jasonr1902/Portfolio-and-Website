@@ -46,12 +46,25 @@ export const Contact = () => {
   const handleSumbit = async (e) => {
     e.preventDefault();
 
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    // Without EmailJS keys (e.g. on GitHub Pages), open the visitor's email app instead.
+    if (!serviceId || !templateId || !publicKey) {
+      const subject = encodeURIComponent(`Portfolio message from ${formData.name}`);
+      const body = encodeURIComponent(`${formData.message}\n\n— ${formData.name} (${formData.email})`);
+      window.location.href = `mailto:jason.royer1902@gmail.com?subject=${subject}&body=${body}`;
+      setSubmitStatus({
+        type: "success",
+        message: "Your email app should open with the message ready to send.",
+      });
+      return;
+    }
+
     setIsLoading(true);
     setSubmitStatus({ type: null, message: "" });
     try {
-      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
       await emailjs.send(
         serviceId,
@@ -99,8 +112,8 @@ export const Contact = () => {
             </span>
           </h2>
           <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            Have a project in mind? I'd love to hear about it. Send me a message
-            and let's discuss how we can work together.
+            Hiring for IT automation or AI-assisted development? Want a demo of
+            a private project? Send me a message.
           </p>
         </div>
 

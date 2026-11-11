@@ -8,17 +8,32 @@ import {
   ChevronDown,
   Download,
 } from "lucide-react";
+import wallpaper from "@/assets/images/sleek-gradient-wallpaper.jpg";
+import portrait from "@/assets/images/portrait.png";
+import resumePdf from "@/assets/Jason_Royer_Resume_030126.pdf";
 
 const skills = [
+  "Claude Code",
+  "Python",
+  "TypeScript",
+  "JavaScript",
   "React",
-  "HTML/CSS",
-  "AWS",
-  "Tailwind CSS",
-  "Unity Game Development",
-  "Java",
-  "C#",
+  "Node.js",
+  "Electron",
+  "OpenAI API",
+  "AWS Amplify",
+  "Supabase",
+  "SQLite",
   "Git",
 ];
+
+// Random positions for the floating background dots, picked once when the page loads.
+const dots = Array.from({ length: 20 }, () => ({
+  left: `${Math.random() * 100}%`,
+  top: `${Math.random() * 100}%`,
+  duration: 15 + Math.random() * 20,
+  delay: Math.random() * 5,
+}));
 
 export const Hero = () => {
   return (
@@ -26,7 +41,7 @@ export const Hero = () => {
       {/* Background */}
       <div className="absolute inset-0">
         <img
-          src="/src/assets/images/sleek-gradient-wallpaper.jpg"
+          src={wallpaper}
           alt="sleek gradient wallpaper"
           className="w-full h-full object-cover opacity-40"
         />
@@ -35,15 +50,16 @@ export const Hero = () => {
 
       {/* Green Dots */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
+        {dots.map((dot, i) => (
           <div
+            key={i}
             className="absolute w-5 h-5 rounded-full opacity-30 blur-xs"
             style={{
               backgroundColor: "#537EEE",
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `slow-drift ${15 + Math.random() * 20}s ease-in-out infinite`,
-              animationDelay: `${Math.random() * 5}s`,
+              left: dot.left,
+              top: dot.top,
+              animation: `slow-drift ${dot.duration}s ease-in-out infinite`,
+              animationDelay: `${dot.delay}s`,
             }}
           />
         ))}
@@ -57,7 +73,7 @@ export const Hero = () => {
             <div className="">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary animate-fade-in-slow">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                Software, Music, Film
+                IT Automation · AI-Assisted Development
               </span>
             </div>
 
@@ -71,11 +87,10 @@ export const Hero = () => {
                 in <span className="text-primary glow-text">everything</span>.
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in-slow animation-delay-600">
-                I'm Jason Royer. I'm a software delevoper who's eager to learn
-                practical tools to be an asset in a real-world environment. I'm
-                focused on improving my coding fundamentals while buidling a
-                serviceable repertoire of programming languages and tech
-                services.
+                I'm Jason Royer. I build practical tools with AI coding agents —
+                desktop apps, mobile web apps, Python utilities and real-time
+                games — and I evaluate AI model output for a living. This is
+                the hub for everything I've built.
               </p>
             </div>
 
@@ -87,8 +102,8 @@ export const Hero = () => {
                 </Button>
               </a>
               <a
-                href="/src/assets/Jason_Royer_Resume_030126.pdf"
-                download="Resume"
+                href={resumePdf}
+                download="Jason_Royer_Resume.pdf"
               >
                 <AnimatedBorderButton>
                   <Download className="w-5 h-5" />
@@ -132,7 +147,7 @@ export const Hero = () => {
               />
               <div className="relative glass rounded-3xl p-2 glow-border animate-fade-in-slow animation-delay-600">
                 <img
-                  src="src\assets\images\portrait.png"
+                  src={portrait}
                   alt="portrait image of Jason Royer"
                   className="w-full h-full aspect-auto object-cover rounded-2xl"
                 />

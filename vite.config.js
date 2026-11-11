@@ -5,6 +5,8 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
+  // Relative paths so the build works on GitHub Pages under any repo name.
+  base: "./",
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
