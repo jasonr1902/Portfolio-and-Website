@@ -5,25 +5,25 @@ const highlights = [
     icon: Workflow,
     title: "Automation mindset",
     description:
-      "I look for the task people repeat every week and turn it into a tool, a script, or an app.",
+      "I find the tedious things in my life and turn them into scripts and apps to keep me efficient.",
   },
   {
     icon: Bot,
-    title: "AI-assisted, human-checked",
+    title: "AI as a tool",
     description:
-      "I build with AI coding agents and evaluate AI output professionally, so I know where it needs a human check.",
+      "I've built many projects with AI and I evaluate AI output professionally, so I know how to work around AI's quirks to get results.",
   },
   {
     icon: Users,
-    title: "Built for real users",
+    title: "Building for real people",
     description:
-      "My lessons tracker is used by a working music teacher, and I keep improving it from their feedback.",
+      "My private lessons tracker is used by a working music teacher, and I keep improving it from their feedback.",
   },
   {
     icon: Wrench,
-    title: "Hands-on with hardware",
+    title: "Hands-on experience",
     description:
-      "Three years assembling, installing, and shipping technical equipment, and writing the procedures for it.",
+      "Three years assembling, installing, and shipping technical equipment, while keeping meticulous inventory logs.",
   },
 ];
 
@@ -41,9 +41,9 @@ export const About = () => {
             </div>
             <h2 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in-slow animation-delay-200 text-secondary-foreground">
               Practical tools,
-              <span className="font-serif italic font-normal text-white">
+              <span className="font-serif italic font-normal text-foreground">
                 {" "}
-                built for people.
+                built with people in mind.
               </span>
             </h2>
 
@@ -54,21 +54,20 @@ export const About = () => {
                 online courses in IT, JavaScript, React and Git.
               </p>
               <p>
-                Today I evaluate large language model output for DataAnnotation,
+                Today I evaluate LLM output for DataAnnotation and Handshake AI,
                 and in my own time I build apps, tools and games with AI coding
                 agents. Before that, I spent three years as a warehouse
                 technician assembling and installing electronic equipment.
               </p>
               <p>
-                I'm looking for a role in IT automation, where I can combine
-                working with people, scripting the repetitive stuff, and using
-                AI responsibly.
+                I'm looking for a role in IT automation, where I can excel
+                because of my people skills, my high standards for quality, and
+                my ability to integrate AI as a tool.
               </p>
             </div>
             <div className="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
               <p className="text-lg font-medium italic text-foreground">
-                If people do it by hand every week, I want to automate it — and
-                check that the automation is right.
+                My goal is to make people's lives (and jobs) easier.
               </p>
             </div>
           </div>

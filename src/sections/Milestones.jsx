@@ -15,7 +15,7 @@ const milestones = [
     description:
       "Courses in IT, JavaScript, React, and Git and GitHub, each finished with a hands-on project.",
     technologies: ["JavaScript", "React", "Git"],
-    current: false,
+    current: true,
   },
   {
     period: "2025",
@@ -48,20 +48,20 @@ export const Milestones = () => {
             Career Journey
           </span>
           <h2 className="text-4xl md:text-5xl font-bold leading-light animate-fade-in-slow animation-delay-200 text-secondary-foreground">
-            Milestones that{" "}
-            <span className="font-serif italic font-normal text-white">
+            Milestones that show{" "}
+            <span className="font-serif italic font-normal text-foreground">
               {" "}
-              show a journey.
+              growth.
             </span>
           </h2>
           <p className="text-lg font-semibold text-muted-foreground animate-fade-in animation-delay-400">
-            Work, school and training that led me to IT automation.
+            Work, school, and training that led me to IT.
           </p>
         </div>
 
         {/* Timeline */}
         <div className="relative">
-          <div className="timeline-glow absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-primary/70 via-primary/30 to-transparent md:-translate-x-1/2 shadow-[0_0_25px_rgba(32,178,166,0.8)]" />
+          <div className="timeline-glow absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-primary/70 via-primary/30 to-transparent md:-translate-x-1/2 shadow-[0_0_25px_rgba(217,148,79,0.6)]" />
 
           {/* Experience Items */}
           <div className="space-y-12">

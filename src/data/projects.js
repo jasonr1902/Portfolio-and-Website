@@ -45,7 +45,7 @@ export const featuredProjects = [
     title: "Private Lessons Tracker",
     description:
       "Mobile app for a private music teacher: students, lessons, mileage, expenses and a monthly statement, replacing manual record-keeping. Works offline, installs to the iPhone home screen, and gets regular updates from user feedback.",
-    tags: ["Preact", "TypeScript", "IndexedDB", "PWA"],
+    tags: ["Preact", "TypeScript", "IndexedDB", "PWA", "Claude Code"],
     icon: Music,
     repo: "Private-Lessons-Tracker",
     isPublic: false,
@@ -63,7 +63,7 @@ export const featuredProjects = [
     title: "NFL Timeout Advisor",
     description:
       "Decision tool that simulates game outcomes to recommend whether a coach should call a timeout, with win probability for each choice. Command line, browser UI and Python API, with automated tests.",
-    tags: ["Python", "Simulation", "pytest"],
+    tags: ["Python", "Simulation", "pytest", "Claude Code"],
     icon: Timer,
     isPublic: false,
   },
@@ -142,8 +142,9 @@ export const moreProjects = [
     items: [
       {
         title: "Blackjack Card Counting Simulation",
-        description: "Simulator for testing blackjack card-counting strategies.",
-        tags: ["React", "TypeScript", "Vitest"],
+        description:
+          "Simulator for testing blackjack card-counting strategies.",
+        tags: ["React", "TypeScript", "Vitest", "Claude Code"],
         icon: Spade,
         repo: "Blackjack-Card-Counting-Simulation",
         isPublic: false,
@@ -151,7 +152,7 @@ export const moreProjects = [
       {
         title: "Life Sim",
         description: "Text-based life simulator for mobile.",
-        tags: ["React Native", "Expo"],
+        tags: ["React Native", "Expo", "Claude Code"],
         icon: Smartphone,
         repo: "Life-Sim-Game",
         isPublic: false,
@@ -171,7 +172,8 @@ export const moreProjects = [
     items: [
       {
         title: "Travel Recommendation",
-        description: "Final project for IBM's JavaScript Programming Essentials (Coursera).",
+        description:
+          "Final project for IBM's JavaScript Programming Essentials (Coursera).",
         tags: ["HTML", "JavaScript"],
         icon: Plane,
         repo: "travelRecommendation",
@@ -179,7 +181,8 @@ export const moreProjects = [
       },
       {
         title: "Health Census",
-        description: "Final project for IBM's JavaScript Programming Essentials (Coursera).",
+        description:
+          "Final project for IBM's JavaScript Programming Essentials (Coursera).",
         tags: ["JavaScript"],
         icon: HeartPulse,
         repo: "health_census",

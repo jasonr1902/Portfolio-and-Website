@@ -70,15 +70,16 @@ export const Projects = () => {
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-200 text-secondary-foreground">
             Projects that
-            <span className="font-serif italic font-normal text-white">
+            <span className="font-serif italic font-normal text-foreground">
               {" "}
               solve real problems.
             </span>
           </h2>
           <p className="text-lg text-muted-foreground">
             Everything I've built, in one place. I build with AI coding agents
-            like Claude Code: I decide what to build, write the plan, review
-            what the AI produces, and test it before it ships.
+            like Claude Code (and a little of my own knowledge): I decide what
+            to build, write the plan, review what the AI produces, and test it
+            before it ships.
           </p>
         </div>
 
@@ -118,7 +119,7 @@ export const Projects = () => {
           <div className="text-center">
             <h3 className="text-2xl md:text-3xl font-bold text-secondary-foreground">
               More{" "}
-              <span className="font-serif italic font-normal text-white">
+              <span className="font-serif italic font-normal text-foreground">
                 builds
               </span>
             </h3>
