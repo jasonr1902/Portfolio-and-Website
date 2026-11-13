@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import portraitBackground from "@/assets/images/portrait-background.jpg";
 import portraitFramed from "@/assets/images/portrait-dimmer.jpg";
-import resumePdf from "@/assets/Jason_Royer_Resume_030126.pdf";
+import resumePdf from "@/assets/Jason_Royer_Resume.pdf";
 
 const skills = [
   "Claude Code",
