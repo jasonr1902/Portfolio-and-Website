@@ -46,12 +46,25 @@ export const Contact = () => {
   const handleSumbit = async (e) => {
     e.preventDefault();
 
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    // Without EmailJS keys (e.g. on GitHub Pages), open the visitor's email app instead.
+    if (!serviceId || !templateId || !publicKey) {
+      const subject = encodeURIComponent(`Portfolio message from ${formData.name}`);
+      const body = encodeURIComponent(`${formData.message}\n\n— ${formData.name} (${formData.email})`);
+      window.location.href = `mailto:jason.royer1902@gmail.com?subject=${subject}&body=${body}`;
+      setSubmitStatus({
+        type: "success",
+        message: "Your email app should open with the message ready to send.",
+      });
+      return;
+    }
+
     setIsLoading(true);
     setSubmitStatus({ type: null, message: "" });
     try {
-      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
       await emailjs.send(
         serviceId,
@@ -94,13 +107,13 @@ export const Contact = () => {
           </span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
             Let's build{" "}
-            <span className="font-serif italic font-normal text-white">
+            <span className="font-serif italic font-normal text-foreground">
               something great.
             </span>
           </h2>
           <p className="text-muted-foreground animate-fade-in animation-delay-200">
-            Have a project in mind? I'd love to hear about it. Send me a message
-            and let's discuss how we can work together.
+            Hiring for IT automation or AI-assisted development? Want a demo of
+            a private project? Send me a message.
           </p>
         </div>
 
@@ -186,7 +199,7 @@ export const Contact = () => {
                   className={`flex items-center gap-3
                      p-4 rounded-xl ${
                        submitStatus.type === "success"
-                         ? "bg-green-500/10 border border-green-500/20 text-green-400"
+                         ? "bg-highlight/10 border border-green-500/20 text-green-400"
                          : "bg-red-500/10 border border-red-500/20 text-red-400"
                      }`}
                 >
@@ -231,7 +244,7 @@ export const Contact = () => {
             {/* Availability Card */}
             <div className="glass rounded-3xl p-8 border border-primary/30">
               <div className="flex items-center gap-3 mb-4">
-                <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+                <span className="w-3 h-3 bg-highlight rounded-full animate-pulse" />
                 <span className="font-medium">Currently Available</span>
               </div>
               <p className="text-muted-foreground text-sm">

@@ -1,38 +1,38 @@
 const milestones = [
   {
-    period: "2022 — Present",
-    role: "Senior Frontend Engineer",
-    company: "Tech Innovators Inc.",
+    period: "2025 — Present",
+    role: "AI Data Analyst",
+    company: "DataAnnotation Tech · Remote",
     description:
-      "Leading frontend architecture for a suite of fintech products. Implemented micro-frontend architecture, reduced bundle size by 40%, and mentored a team of 5 developers.",
-    technologies: ["React", "TypeScript", "Next.js", "GraphQL"],
+      "Evaluate large language model responses for accuracy, relevance, tone and instruction-following using structured rubrics, and write feedback on recurring model weaknesses.",
+    technologies: ["LLM evaluation", "Rubrics", "QA"],
     current: true,
   },
   {
-    period: "2020 — 2022",
-    role: "Frontend Engineer",
-    company: "Digital Solutions Co.",
+    period: "2025 — 2026",
+    role: "Online coursework",
+    company: "IBM on Coursera and others",
     description:
-      "Built and maintained multiple React applications for enterprise clients. Introduced automated testing practices that improved code coverage to 85%.",
-    technologies: ["React", "Redux", "Jest", "Cypress"],
+      "Courses in IT, JavaScript, React, and Git and GitHub, each finished with a hands-on project.",
+    technologies: ["JavaScript", "React", "Git"],
+    current: true,
+  },
+  {
+    period: "2025",
+    role: "Bachelor of Music, minor in Computer Science",
+    company: "Stephen F. Austin State University",
+    description:
+      "Music degree alongside a computer science minor in object-oriented programming and web fundamentals.",
+    technologies: ["Java", "C#", "HTML/CSS"],
     current: false,
   },
   {
-    period: "2019 — 2020",
-    role: "Junior Developer",
-    company: "StartUp Labs",
+    period: "2021 — 2024",
+    role: "Warehouse Technician",
+    company: "Kingdom Technology Services · Katy, TX",
     description:
-      "Contributed to the development of a SaaS platform from MVP to production. Collaborated with designers to implement pixel-perfect UI components.",
-    technologies: ["React", "Node.js", "MongoDB", "AWS"],
-    current: false,
-  },
-  {
-    period: "2018 — 2019",
-    role: "Freelance Developer",
-    company: "Self-Employed",
-    description:
-      "Delivered custom web solutions for small businesses and startups. Built 15+ websites and applications, handling everything from design to deployment.",
-    technologies: ["JavaScript", "PHP", "WordPress", "MySQL"],
+      "Assembled and installed electronic and UV filtration components, wrote improved assembly procedures, and managed inventory and shipping for sensitive equipment.",
+    technologies: ["Hardware", "Documentation", "Inventory"],
     current: false,
   },
 ];
@@ -43,26 +43,25 @@ export const Milestones = () => {
       <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2" />
       <div className="container mx-auto px-6 relative z-10">
         {/* Section header */}
-        <div className="max-w03xl mb-16">
+        <div className="max-w-3xl mb-16">
           <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase">
             Career Journey
           </span>
           <h2 className="text-4xl md:text-5xl font-bold leading-light animate-fade-in-slow animation-delay-200 text-secondary-foreground">
-            Milestones that{" "}
-            <span className="font-serif italic font-normal text-white">
+            Milestones that show{" "}
+            <span className="font-serif italic font-normal text-foreground">
               {" "}
-              show a journey.
+              growth.
             </span>
           </h2>
           <p className="text-lg font-semibold text-muted-foreground animate-fade-in animation-delay-400">
-            There are my jobs I've had. None of them are related to tech, so
-            what's the point?
+            Work, school, and training that led me to IT.
           </p>
         </div>
 
         {/* Timeline */}
         <div className="relative">
-          <div className="timeline-glow absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-primary/70 via-primary/30 to-transparent md:-translate-x-1/2 shadow-[0_0_25px_rgba(32,178,166,0.8)]" />
+          <div className="timeline-glow absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-linear-to-b from-primary/70 via-primary/30 to-transparent md:-translate-x-1/2 shadow-[0_0_25px_rgba(217,148,79,0.6)]" />
 
           {/* Experience Items */}
           <div className="space-y-12">

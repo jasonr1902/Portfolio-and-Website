@@ -8,17 +8,30 @@ import {
   ChevronDown,
   Download,
 } from "lucide-react";
+import portraitBackground from "@/assets/images/portrait-background.jpg";
+import portraitFramed from "@/assets/images/portrait-dimmer.jpg";
+import resumePdf from "@/assets/Jason_Royer_Resume_030126.pdf";
 
 const skills = [
+  "Claude Code",
+  "Python",
+  "JavaScript",
   "React",
-  "HTML/CSS",
-  "AWS",
-  "Tailwind CSS",
-  "Unity Game Development",
-  "Java",
-  "C#",
+  "Node.js",
+  "OpenAI API",
+  "AWS Amplify",
+  "Supabase",
+  "SQLite",
   "Git",
 ];
+
+// Random positions for the floating background dots, picked once when the page loads.
+const dots = Array.from({ length: 20 }, () => ({
+  left: `${Math.random() * 100}%`,
+  top: `${Math.random() * 100}%`,
+  duration: 15 + Math.random() * 20,
+  delay: Math.random() * 5,
+}));
 
 export const Hero = () => {
   return (
@@ -26,24 +39,26 @@ export const Hero = () => {
       {/* Background */}
       <div className="absolute inset-0">
         <img
-          src="/src/assets/images/sleek-gradient-wallpaper.jpg"
-          alt="sleek gradient wallpaper"
-          className="w-full h-full object-cover opacity-40"
+          src={portraitBackground}
+          alt=""
+          aria-hidden="true"
+          className="w-full h-full object-cover opacity-20 blur-xl scale-110"
         />
         <div className="absolute inset-0 bg-linear-to-b from-background/20 via-background/40 to-background/70" />
       </div>
 
       {/* Green Dots */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, i) => (
+        {dots.map((dot, i) => (
           <div
+            key={i}
             className="absolute w-5 h-5 rounded-full opacity-30 blur-xs"
             style={{
-              backgroundColor: "#537EEE",
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `slow-drift ${15 + Math.random() * 20}s ease-in-out infinite`,
-              animationDelay: `${Math.random() * 5}s`,
+              backgroundColor: i % 3 === 0 ? "#a7d26a" : "#d9944f",
+              left: dot.left,
+              top: dot.top,
+              animation: `slow-drift ${dot.duration}s ease-in-out infinite`,
+              animationDelay: `${dot.delay}s`,
             }}
           />
         ))}
@@ -57,25 +72,25 @@ export const Hero = () => {
             <div className="">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary animate-fade-in-slow">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                Software, Music, Film
+                IT Automation · AI-Assisted Development
               </span>
             </div>
 
             {/* Headline */}
             <div className="space-y-4">
               <h1 className="text-5xl md:text-6xl lg:text-7xl leading-tight animate-fade-in-slow animation-delay-300">
-                <span className="font-serif italic font-normal text-white">
+                <span className="font-serif italic font-normal text-foreground">
                   Excellence
                 </span>
                 <br />
                 in <span className="text-primary glow-text">everything</span>.
               </h1>
               <p className="text-lg text-muted-foreground max-w-lg animate-fade-in-slow animation-delay-600">
-                I'm Jason Royer. I'm a software delevoper who's eager to learn
-                practical tools to be an asset in a real-world environment. I'm
-                focused on improving my coding fundamentals while buidling a
-                serviceable repertoire of programming languages and tech
-                services.
+                I'm Jason Royer. I build practical tools with AI coding agents,
+                such as desktop apps, mobile web apps, Python utilities and
+                real-time games. I evaluate AI model output for a living, so I
+                know how to scrutinize it. This is the hub for everything I've
+                built.
               </p>
             </div>
 
@@ -86,10 +101,7 @@ export const Hero = () => {
                   Contact Me <ArrowRight className="" />
                 </Button>
               </a>
-              <a
-                href="/src/assets/Jason_Royer_Resume_030126.pdf"
-                download="Resume"
-              >
+              <a href={resumePdf} download="Jason_Royer_Resume.pdf">
                 <AnimatedBorderButton>
                   <Download className="w-5 h-5" />
                   Download CV
@@ -132,15 +144,15 @@ export const Hero = () => {
               />
               <div className="relative glass rounded-3xl p-2 glow-border animate-fade-in-slow animation-delay-600">
                 <img
-                  src="src\assets\images\portrait.png"
-                  alt="portrait image of Jason Royer"
+                  src={portraitFramed}
+                  alt="Jason Royer"
                   className="w-full h-full aspect-auto object-cover rounded-2xl"
                 />
 
                 {/* Floating Badge */}
                 <div className="absolute -bottom-4 -right-4 glass rounded-xl px-4 py-3">
                   <div className="flex items-center gap-3">
-                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+                    <div className="w-3 h-3 bg-highlight rounded-full animate-pulse" />
                     <span className="text-sm font-medium">
                       Available for work
                     </span>
